@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background: url(images/photo-1.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-size: 7rem;
+            background-color: #fff;
+            padding: 5px 20px;
+            border-radius: 10px;
+            mix-blend-mode: screen;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <section>
+        <h1>Random</h1>
+    </section>
+
+
+    <script>
+        function changeBg() {
+            let slide = document.querySelector("section");
+
+            let arrSlide = ['url("images/photo-1.jpg")', 
+            'url("images/photo-2.jpg")', 
+            'url("images/photo-3.webp")', 
+            'url("images/photo-4.webp")', 
+            'url("images/photo-5.jpg")',
+            'url("images/photo-6.jpg")',
+            'url("images/photo-7.jpg")',
+            'url("images/photo-8.jpg")',
+            'url("images/photo-9.jpg")'
+            ];
+
+            
+
+            const random = arrSlide[Math.floor(Math.random() * arrSlide.length)];
+            slide.style.backgroundImage = random;
+        }
+
+        setInterval(changeBg, 2000)
+
+    </script>
+</body>
+</html>
